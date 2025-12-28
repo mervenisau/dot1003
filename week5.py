@@ -6,15 +6,26 @@ n=sentence.count(question)
 print(f"item {question} appeared {n} times")
 print("")
 #task55
-def ask():
-    return(f"item {item} appeared {n} times")
-search=input("Enter the input to search: ")
-item=input("Which item do you want to search?: ")
-n=search.count(item)
-print(ask())
+def question(search1,item1):
+    n=search1.count(item1)
+    return (f"item {item1} appeared {n} times")
+a=input("Enter the input to search: ")
+b=input("Which item do you wan to search?: ")
+print(question(a,b))
 print("")
 #task56
+def clear_vowels(text):
+    vowels="aeiouAEIOU"
+    new_text=""
 
+    for x in text:
+        if x not in vowels:
+            new_text+=x
+    return new_text
+
+menu_button=input("Enter a text: ")
+print(clear_vowels(menu_button))
+print("")
 #task57
 def anarya(game_list):
     game_list.reverse()
@@ -28,8 +39,7 @@ while game != "exit":
     game = input("Enter a game: ")
 
 print(game_list)               
-tersi = anarya(game_list)
-print(tersi)   
+print(anarya(game_list))
 print("")
 #task58
 def anarya(game_list):
@@ -121,4 +131,79 @@ row_no = int(input("Which row do you want to sum (0-2): "))
 print("Sum of row", row_no, "is", sum_of_row(my_matrix, row_no))
 print("")
 #task63
+def tripler(numbers):
+    new_list = []
+    for n in numbers:
+        new_list.append(n * 3)
+    return new_list
 
+my_lucky_numbers = [4, 8, 15, 16, 23, 42]
+tripled_numbers = tripler(my_lucky_numbers)
+
+print(f"My Lucky Numbers: {my_lucky_numbers}")
+print(f"Tripled Numbers: {tripled_numbers}")
+print("")
+#task64
+inventory = {
+    "item1": 3,
+    "item2": 1,
+    "item3": 5
+}
+
+for key, value in inventory.items():
+    print(f"{key}: {value}")
+print("")
+#task65
+inventory = {
+    "item1": 3,
+    "item2": 1,
+    "item3": 5
+}
+
+def add_item(item, quantity):
+    if item in inventory:
+        inventory[item] += quantity
+    else:
+        inventory[item] = quantity
+
+add_item("item1", 5)
+add_item("item4", 1)
+
+for key, value in inventory.items():
+    print(f"{key}: {value}")
+print("")
+#task66
+inventory = {"item1": 3, "item2": 1, "item3": 5}
+
+def add_item(item, quantity):
+    if item in inventory:
+        inventory[item] += quantity
+    else:
+        inventory[item] = quantity
+
+def remove_item(item, quantity):
+    if item not in inventory:
+        return  # item yoksa çık
+
+    new_qty = inventory[item] - quantity
+
+    if new_qty < 0:
+        new_qty = 0
+
+    if new_qty == 0:
+        del inventory[item]      # Task 66: 0 olunca sil
+    else:
+        inventory[item] = new_qty
+
+# Test (PDF’deki örneğe benzer)
+add_item("item1", 5)
+add_item("item4", 1)
+
+remove_item("item4", 6)
+remove_item("item1", 2)
+
+for key, value in inventory.items():
+    print(f"{key}: {value}")
+print("")
+
+#task56 ,64.65 ve 66 için yapay zekadan yardım aldım

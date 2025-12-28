@@ -1,20 +1,19 @@
 #task40
-a=int(input("How many repetition for 'li': "))
-b=input("Which city: ")
-c=b+a*"li"+"lerle"
-print(c)
+repetition=int(input("How many repetiton for 'li': "))
+city=input("Which word: ")
+print(city + "li"*repetition + "lerle")
 print("")
 #task41
-def longer_string(text1, text2):
-    if len(text1) > len(text2):
-        return text1
-    elif len(text2) > len(text1):
-        return text2
+def compare(first, second):
+    if len(first)>len(second):
+        return first
+    elif len(first)<len(second):
+        return second
     else:
-        return "Their length are same"
-a = input("First Word: ")
-b = input("Second Word: ")
-print(longer_string(a, b))
+        return "Their length are same."
+first_input= input("First Word: ")
+second_input=input("Second Word: ")
+print(compare(first_input, second_input))
 print("")
 #task42
 a=str(input("Your input: "))
